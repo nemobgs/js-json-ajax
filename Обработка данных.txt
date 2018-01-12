@@ -1,0 +1,69 @@
+var book = [
+    {name: "Prince111", author: "John Vaso", price: 12.00, 'user login': 'test'},
+    {name: "Wild world", author: "K. Ford", price: 17.50, 'user login': 'test'},
+    {name: "Cute love", author: "Mary Jane", price: 20.30, 'user login': 'test'},
+    {name: "PHP7", author: "Miha Japan", price: 5.00, 'user login': 'test'},
+    {name: "PHP5", author: "Miha Japan", price: 5.00, 'user login': 'test'},
+    {name: "PHP4", author: "Miha Japan", price: 5.00, 'user login': 'test'},
+    {name: "Prince", author: "John Vaso", price: 12.00, 'user login': 'test'},
+    {name: "Wild world", author: "K. Ford", price: 17.50, 'user login': 'test'},
+    {name: "Cute love", author: "Mary Jane", price: 20.30, 'user login': 'test'},
+    {name: "PHP7", author: "Miha Japan", price: 5.00, 'user login': 'test'},
+    {name: "PHP5", author: "Miha Japan", price: 5.00, 'user login': 'test'},
+    {name: "PHP4", author: "Miha Japan", price: 5.00, 'user login': 'test'},
+    {name: "Prince", author: "John Vaso", price: 12.00, 'user login': 'test'},
+    {name: "Wild world", author: "K. Ford", price: 17.50, 'user login': 'test'},
+    {name: "Cute love", author: "Mary Jane", price: 20.30, 'user login': 'test'},
+    {name: "PHP7", author: "Miha Japan", price: 5.00, 'user login': 'test'},
+    {name: "PHP5", author: "Miha Japan", price: 5.00, 'user login': 'test'},
+    {name: "PHP4", author: "Miha Japan", price: 5.00, 'user login': 'test'},
+    {name: "Prince", author: "John Vaso", price: 12.00, 'user login': 'test'},
+    {name: "Wild world", author: "K. Ford", price: 17.50, 'user login': 'test'},
+    {name: "Cute love", author: "Mary Jane", price: 20.30, 'user login': 'test'},
+    {name: "PHP7", author: "Miha Japan", price: 5.00, 'user login': 'test'},
+    {name: "PHP5", author: "Miha Japan", price: 5.00, 'user login': 'test'},
+    {name: "PHP4", author: "Miha Japan", price: 5.00, 'user login': 'test'},
+    {name: "Prince", author: "John Vaso", price: 12.00, 'user login': 'test'},
+    {name: "Wild world", author: "K. Ford", price: 17.50, 'user login': 'test'},
+    {name: "Cute love", author: "Mary Jane", price: 20.30, 'user login': 'test'},
+    {name: "PHP7", author: "Miha Japan", price: 5.00, 'user login': 'test'},
+    {name: "PHP5", author: "Miha Japan", price: 5.00, 'user login': 'test'},
+    {name: "PHP4", author: "Miha Japan", price: 5.00, 'user login': 'test'},
+    {name: "Prince", author: "John Vaso", price: 12.00, 'user login': 'test'},
+    {name: "Wild world", author: "K. Ford", price: 17.50, 'user login': 'test'},
+    {name: "Cute love", author: "Mary Jane", price: 20.30, 'user login': 'test'},
+    {name: "PHP7", author: "Miha Japan", price: 5.00, 'user login': 'test'},
+    {name: "PHP5", author: "Miha Japan", price: 5.00, 'user login': 'test'},
+    {name: "PHP4", author: "Miha Japan", price: 5.00, 'user login': 'test'},
+    {name: "PHP999", author: "Miha Japan", price: 5.00, 'user login': 'test', like: true}
+];
+
+
+data = {};
+console.log(data);
+add(book);
+function add(test) {
+    for (let i = 0; i < test.length; i++) {
+        for (var final in test[i]) {
+            data[final] =  data[final] || {};
+            data[final] += ' ' + test[i][final];
+
+        }
+    }
+}
+
+//////////////////////////////////////////////////////////
+
+add(book);
+function add(test) {
+    for (let i = 0; i < test.length; i++) {
+        for (var final in test[i]) {
+            if (typeof test[i] === 'object') {
+                if (data[final] === undefined) {
+                    data[final] = [];
+                }
+                data[final].push(test[i][final]);
+            }
+        }
+    }
+}

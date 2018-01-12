@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AJAX JSON</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <style>
+        button {
+            width: 200px;
+            height: 50px;
+
+        }
+    </style>
+</head>
+<body>
+<br>
+<br>
+<div class="container">
+    <table class="table table-bordered table-stripedep table-hover" id="empol_data">
+        <thead>
+        <tr class="text-center">
+            <th>name</th>
+            <th>author</th>
+            <th>price</th>
+            <th>user login</th>
+        </tr>
+        </thead>
+        <tbody id="tdBody">
+
+        </tbody>
+    </table>
+    <div class="buttonAjax row justify-content-center ">
+        <button id="btn" type="button" class="btn btn-dark ajaxbutton">CLICK</button>
+
+    </div>
+
+</div>
+
+<!--<script src="https://code.jquery.com/jquery-3.2.1.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>-->
+<!--<script src="js.js"></script>-->
+<!--<script>-->
+
+    <!--var clickMe = document.getElementById('btn');-->
+    <!--clickMe.onclick = function get(url, callback) {-->
+        <!--var request = new XMLHttpRequest();-->
+
+<!--//        request.open("GET", "data.json" + ((/\?/).test("data.json") ? "&" : "?") + (new Date()).getTime());-->
+        <!--request.open("GET", "data.json" + ("?") + (new Date()).getTime());-->
+
+        <!--request.onreadystatechange = function () {-->
+            <!--if (request.readyState === 4 && request.status === 200) {-->
+                <!--var type = request.getResponseHeader("Content-Type");-->
+                <!--console.log(type);-->
+
+                <!--for (var value of JSON.parse(request.responseText)) {-->
+                    <!--if (value.author || value.name || value["user login"] || value.price) {-->
+
+                        <!--var tr = document.createElement("tr"); //TODO как добавляеются колонки если строка уже вставлена в таблицу?// Потому что оно загружаеться асинхронно-->
+                        <!--document.getElementById("tdBody").appendChild(tr);-->
+                        <!--var tdName = document.createElement("td");-->
+                        <!--var name = document.createTextNode(value.name || '');-->
+                        <!--tdName.appendChild(name);-->
+                        <!--tr.appendChild(tdName);-->
+
+                        <!--var tdPrise = document.createElement("td");-->
+                        <!--var prise = document.createTextNode(value.price || '');-->
+                        <!--tdPrise.appendChild(prise);-->
+                        <!--tr.appendChild(tdPrise);-->
+
+                        <!--var tdAuthor = document.createElement("td");-->
+                        <!--var author = document.createTextNode(value.author || '');-->
+                        <!--tdAuthor.appendChild(author);-->
+                        <!--tr.appendChild(tdAuthor);-->
+
+                        <!--var tdUser = document.createElement("td");-->
+                        <!--var user = document.createTextNode(value["user login"] || '');-->
+                        <!--tdUser.appendChild(user);-->
+                        <!--tr.appendChild(tdUser);-->
+
+                    <!--}-->
+                <!--}-->
+            <!--}-->
+        <!--};-->
+        <!--request.send();-->
+
+    <!--};-->
+
+<!--</script>-->
+
+<script>
+    var one = "/index.php?test=1&id=15&viev=po_st";
+    var two = "/index.php?id=20&viev=pic";
+var patternOne = /=\w+/ig;
+var patternOne1 = /viev=\w+/ig;
+var finishOne = one.match(patternOne);
+// var finishOne1 = one.replace(sssearchValue: string, replaceValue: string)(patternOne1);
+
+console.log(finishOne);
+console.log(finishOne1);
+// var user = "name:Jembo age:17 dev:Front mail:code25@gmail.com pass:12345 name:mesi age:130 dev:Front mail:lol.ru66@mail.ru pass:54322 name:Gitler age:19 dev:Front mail:codegmail.com pass:65358"
+// var userr = "name:mesi&age:130?dev:Front/mail:lol.ru@mail.ru&mail:codegmail.com:pass:54322"
+// var userrr = "name:Gitler age:19 dev:Front mail:codegmail.com pass:65358"
+
+// var patternOne = /mail:\w+.?\w+@\w+\.\w+/gi;
+// var patternOne = /\ds/gi;
+// var patternOne = /pass:\w+/gi;
+// var patternOne = /age:\w+/gi;
+
+
+
+// var finish = user.match(patternOne);
+// var finishh = userr.match(patternOne);
+// var finishhh = userrr.match(patternOne);
+
+// console.log(finish , finishh , finishhh);
+
+// console.log(finish);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var patternOne = /\w{0,}=\d+/ig;
+
+
+    // var name = "@mail test@mail.ru mail.ru nestor90@mail.ru"
+    // console.log(name.match(/[a-zA-Z_0-9]+@[a-z]+\.\w+/g));
+// console.log(patternOne.replace(url: DOMString));
+
+
+    // function myFuncOne(match, offset, str) {
+    //     console.log(one.replace([^post], ""));
+        //    console.log(one.replace(/=/g, "/"));
+        //    console.log(one.replace(/(index.php)/i, ""));
+//    console.log(one.replace( myFuncOne));
+//    console.log(two.replace(/\S+/mig , myFuncTwo));
+
+
+    // }
+
+
+
+
+    // /post/15
+    // /pic/20
+
+
+
+</script>
+
+
+
+</body>
+</html>
+
+
